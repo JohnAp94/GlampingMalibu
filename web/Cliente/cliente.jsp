@@ -62,6 +62,57 @@
             <p>¡Te esperamos!</p>
         </div>
     </section>
+    <section class="gallery-section">
+        <div>
+            <div class="row">
+                <div class="">
+                    <h2 class="gallery-tittle" id="galeria">¡Vive tu mejor experiencia!</h2>
+                    <div class="carousel">
+                        <div class="carousel-item"><img src="Images/image01.jpg" alt="Imagen 1"></div>
+                        <div class="carousel-item"><img src="Images/image02.jpg" alt="Imagen 2"></div>
+                        <div class="carousel-item"><img src="Images/image03.jpg" alt="Imagen 3"></div>
+                        <div class="carousel-item"><img src="Images/image04.jpg" alt="Imagen 4"></div>
+                        <div class="carousel-item"><img src="Images/image05.jpg" alt="Imagen 5"></div>
+                        <div class="carousel-item"><img src="Images/image06.jpg" alt="Imagen 6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="opiniones" class="reviews-section">
+        <div class="linea-division container"></div>
+        <div class="container-reviews">
+            <h2 class="titulo-valoracion">Valoraciones de usuarios</h2>
+            <div class="container-valoraciones">
+                <div class="review">
+                    <div class="image-container"><img src="Images/Mujer.png" alt="img mujer"></div>
+                    <div class="review-content">
+                        <h3>Isabella Carrillo</h3>
+                        <img src="Images/5stars.png" alt="5 estrellas">
+                        <p>"Sencillamente inolvidable, sin duda alguna volveré en mis próximas vacaciones."</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="image-container"><img src="Images/Hombre.png" alt="img hombre"></div>
+                    <div class="review-content">
+                        <h3>Alex Freeman</h3>
+                        <img src="Images/5stars.png" alt="5 estrellas">
+                        <p>"This place is gorgeous, the landscapes are perfect, this is my new favorite place to visit when I come to Colombia."</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="image-container"><img src="Images/Hombre.png" alt="img hombre"></div>
+                    <div class="review-content">
+                        <h3>Marco A. Solis</h3>
+                        <img src="Images/5stars.png" alt="5 estrellas">
+                        <p>"Tenía buenas expectativas, sin embargo esta experiencia las superó con creces, ya estamos planeando el próximo paseo
+                             familiar y creo que solo debemos fijar la fecha, pues el lugar está!"</p>
+                    </div.review-content
+                   >
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="social-section">
         <div class="pie-de-pagina">
             <p>Diseñado por John Aparicio, Fabio González y Duchley Hoyos.</p>

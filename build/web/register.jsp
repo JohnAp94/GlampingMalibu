@@ -60,7 +60,20 @@
                     <form id="form1" action="RegisterServlet?accion=registrar" method="POST">
                         <input type="text" name="username" id="username" value="" placeholder="Usuario" required/>
                         <hr>
+                        <input type="text" name="name" id="name" value="" placeholder="Nombres" required/>
+                        <hr>
+                        <input type="text" name="lastname" id="lastname" value="" placeholder="Apellidos" required/>
+                        <hr>
+                        <input type="number" name="cedula" id="cedula" min="0" placeholder="Cédula" required/>
+                        <hr>
+                        <input type="email" name="email" id="email" placeholder="email" required/>
+                        <hr>
                         <input type="password" name="password" id="password" value="" placeholder="Contraseña" required>
+                        <hr>
+                        <select name="genero" id="genero">
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                        </select>
                         <hr>
                         <input type="submit" name="registrarse" value="Registrarse" class="btn"/>
                         <p>${msje}</p>

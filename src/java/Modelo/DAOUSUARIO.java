@@ -12,21 +12,27 @@ public class DAOUSUARIO extends conexion{
         Connection cn = null;
         Statement st = null;
         ResultSet rs = null;
-        String sql = "SELECT U.IDUSUARIO, C.NOMBRECARGO FROM USUARIO U INNER JOIN CARGO C ON "
-                + "U.IDCARGO = C.IDCARGO WHERE U.ESTADO = 1 AND U.NOMBREUSUARIO = '"+ user.getNombreUsuario()+"' "
+        String sql = "SELECT U.IDUSUARIO, U.NOMBREUSUARIO, U.CLAVE, U.CEDULA, U.NOMBRE, U.APELLIDO, "
+                + "U.GENERO, U.EMAIL, C.NOMBRECARGO FROM USUARIO U INNER JOIN CARGO C ON "
+                + "U.IDCARGO = C.IDCARGO WHERE U.NOMBREUSUARIO = '"+ user.getNombreUsuario()+"' "
                 + "AND U.CLAVE = '"+user.getClave()+"'";
         con = new conexion();
         try{
             cn = con.conectar();
             st = cn.createStatement();
             rs = st.executeQuery(sql);
-            if (rs.next() == true) {
+            if (rs.next()) {
                 usu = new usuario();
                 usu.setId_usuario(rs.getInt("IDUSUARIO"));
-                usu.setNombreUsuario(user.getNombreUsuario());
+                usu.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
                 usu.setCargo(new cargo());
                 usu.getCargo().setNombreCargo(rs.getString("NOMBRECARGO"));
-                usu.setEstado(true);
+                usu.setClave(rs.getString("CLAVE"));
+                usu.setCedula(rs.getInt("CEDULA"));
+                usu.setNombre(rs.getString("NOMBRE"));
+                usu.setApellido(rs.getString("APELLIDO"));
+                usu.setGenero(rs.getInt("GENERO"));
+                usu.setEmail(rs.getString("EMAIL"));
             }
         }catch(Exception e){
             System.out.println("Error"+ e.getMessage());

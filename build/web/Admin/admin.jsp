@@ -56,10 +56,10 @@
     <section class="description-section">
         <div class="hero-description">
             <h3 class="subtittle">Usted es ${usuario.cargo.nombreCargo}</h3>
-            <p>Prepárate para vivir una experiencia como ninguna otra, en el Glamping Malibú podrás disfrutar de los más bellos paisajes,
-                 atardeceres e inolvidables actividades alrededor de la naturaleza.</p>
-            <p>Puedes venir sólo, con tus amigos, familiares y mascotas, no te arrepentirás.</p>
-            <p>¡Te esperamos!</p>
+            <p>Nombre: ${usuario.nombre}</p>
+            <p>Apellido: ${usuario.apellido}</p>
+            <p>cedula: ${usuario.cedula}</p>
+            <p>email: ${usuario.email}</p>
         </div>
     </section>
     <section class="social-section">

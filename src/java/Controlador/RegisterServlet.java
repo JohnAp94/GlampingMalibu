@@ -46,18 +46,24 @@ public class RegisterServlet extends HttpServlet {
     private void registrar (HttpServletRequest request, HttpServletResponse response) throws Exception{
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
-        if (username == null || password == null || username.isEmpty() || password.isEmpty()){
-            request.setAttribute("msje", "Todos los campos son obligatorios");
-        }
+        String name = request.getParameter("name");
+        String lastname = request.getParameter("lastname");
+        int genero = Integer.parseInt(request.getParameter("genero"));
+        int cedula = Integer.parseInt(request.getParameter("cedula"));
+        String email = request.getParameter("email");
         
         try {
             conexion cn = new conexion();
             Connection connection = cn.conectar();
-            String sql = "INSERT INTO usuario (NOMBREUSUARIO, CLAVE, ESTADO, IDCARGO) VALUES (?, ?, 1, 2)";
+            String sql = "INSERT INTO usuario (NOMBREUSUARIO, CLAVE, NOMBRE, APELLIDO, GENERO, CEDULA, EMAIL, IDCARGO) VALUES (?, ?, ?, ?, ?, ?, ?, 2)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, username);
             statement.setString(2, password);
+            statement.setString(3, name);
+            statement.setString(4, lastname);
+            statement.setInt(5, genero);
+            statement.setInt(6, cedula);
+            statement.setString(7, email);
             int rowsInserted = statement.executeUpdate();
             if(rowsInserted > 0){
                 request.getRequestDispatcher("RegExitoso.jsp").forward(request, response);

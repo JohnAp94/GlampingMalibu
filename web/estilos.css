@@ -345,6 +345,10 @@ nav {
     height: 40px;
     text-align: center;
 }
+#cedula{ 
+    border: none;
+    text-align: center;
+}
 #form1 hr{
     margin-bottom: 10px;
     color: #aed6f1;
@@ -362,4 +366,14 @@ nav {
 }
 #form1 p{
     color: Red;
+}
+#genero{
+    display: block;
+    background-color: transparent;
+    border-style: solid;
+    border-color: lightgray;
+}
+#email{
+    border: none;
+    text-align: center;
 }
