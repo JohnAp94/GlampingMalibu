@@ -55,7 +55,7 @@
             <p>Puedes venir sólo, con tus amigos, familiares y mascotas, no te arrepentirás.</p>
             <p>¡Te esperamos!</p>
         </div>
-        <a href="reserva.jsp" class="btn-reserva">¡RESERVA AQUÍ!</a>
+        <a href="Cliente/cliente.jsp" class="btn-reserva">¡RESERVA AQUÍ!</a>
     </section>
     <section class="gallery-section">
         <div>

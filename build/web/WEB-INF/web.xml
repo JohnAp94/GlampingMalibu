@@ -16,6 +16,10 @@
         <servlet-name>AlojamientoServlet</servlet-name>
         <servlet-class>Controlador.AlojamientoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReservaServlet</servlet-name>
+        <servlet-class>Controlador.ReservaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>AlojamientoServlet</servlet-name>
         <url-pattern>/AlojamientoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReservaServlet</servlet-name>
+        <url-pattern>/ReservaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

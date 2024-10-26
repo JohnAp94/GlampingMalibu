@@ -84,7 +84,7 @@
                             <td width="300">${alojamiento.descripcion}</td>
                             <td>${alojamiento.capacidad}</td>
                             <td>${alojamiento.precio}</td>
-                            <td><a class="btn">Reservar</a></td>
+                            <td><a href="ReservaServlet?accion=reservar&idAlojamiento=${alojamiento.idAlojamiento}" class="btn">Reservar</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

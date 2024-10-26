@@ -99,4 +99,29 @@ public class DAOAlojamiento extends conexion{
         }
     }
     
+    public Alojamiento obtenerAlojamientoPorId(int idAlojamiento) throws SQLException {
+        Alojamiento alojamiento = null;
+        String sql = "SELECT * FROM alojamiento WHERE IDALOJAMIENTO = ?";
+        try (Connection cn = this.conectar();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+
+            ps.setInt(1, idAlojamiento);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    alojamiento = new Alojamiento();
+                    alojamiento.setIdAlojamiento(rs.getInt("IDALOJAMIENTO"));
+                    alojamiento.setNombre(rs.getString("NOMBRE"));
+                    alojamiento.setDescripcion(rs.getString("DESCRIPCION"));
+                    alojamiento.setPrecio(rs.getDouble("PRECIO"));
+                    alojamiento.setRutaFoto(rs.getString("RUTA_FOTO"));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener alojamiento por ID: " + e.getMessage());
+        }
+        System.out.println(alojamiento);
+        return alojamiento;
+    }
+
+    
 }
