@@ -66,7 +66,6 @@ public class DAOAlojamiento extends conexion{
         }
     }
 
-    // Método para editar un alojamiento existente
     public boolean editarAlojamiento(Alojamiento alojamiento) throws SQLException {
         String sql = "UPDATE alojamiento SET NOMBRE = ?, DESCRIPCION = ?, PRECIO = ?, RUTA_FOTO = ? WHERE IDALOJAMIENTO = ?";
         try (Connection cn = this.conectar();
@@ -85,7 +84,6 @@ public class DAOAlojamiento extends conexion{
     }
 
 
-    // Método para eliminar un alojamiento
     public boolean eliminarAlojamiento(int idAlojamiento) throws SQLException {
         String sql = "DELETE FROM alojamiento WHERE IDALOJAMIENTO = ?";
         try (Connection cn = this.conectar();

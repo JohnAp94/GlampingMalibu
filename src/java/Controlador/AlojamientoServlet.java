@@ -24,14 +24,12 @@ public class AlojamientoServlet extends HttpServlet {
                 case "listar":
                     listarAlojamientos(request, response);
                     break;
-                // Aquí puedes agregar más acciones para otras funcionalidades
                 default:
-                    // Si la acción no es reconocida, puedes redirigir o enviar un error
                     response.sendRedirect("error.jsp");
                     break;
             }
         } else {
-            response.sendRedirect("error.jsp"); // Redirigir si no hay acción
+            response.sendRedirect("error.jsp");
         }
     }
 
@@ -39,7 +37,7 @@ public class AlojamientoServlet extends HttpServlet {
             throws ServletException, IOException, SQLException {
         DAOAlojamiento dao = new DAOAlojamiento();
         try {
-            List<Alojamiento> listaAlojamientos = dao.listarAlojamientos(); // Método en DAOAlojamiento que consulta la lista
+            List<Alojamiento> listaAlojamientos = dao.listarAlojamientos();
             request.setAttribute("listaAlojamientos", listaAlojamientos);
             request.getRequestDispatcher("/Cliente/cliente.jsp").forward(request, response);
         } catch (Exception e) {

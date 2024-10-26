@@ -6,7 +6,6 @@ import Modelo.DAORESERVA;
 import Modelo.Reserva;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.ServletException;
@@ -48,7 +47,7 @@ public class ReservaServlet extends HttpServlet {
         System.out.println(idAlojamiento);
 
         DAOAlojamiento daoAlojamiento = new DAOAlojamiento();
-        Alojamiento alojamiento = daoAlojamiento.obtenerAlojamientoPorId(idAlojamiento); // Método para obtener el alojamiento
+        Alojamiento alojamiento = daoAlojamiento.obtenerAlojamientoPorId(idAlojamiento);
 
         request.setAttribute("alojamiento", alojamiento);
         request.getRequestDispatcher("reserva.jsp").forward(request, response);
@@ -70,7 +69,6 @@ public class ReservaServlet extends HttpServlet {
         long diff = diffInMillies / (24 * 60 * 60 * 1000);
         double total = precioPorNoche * diff;
 
-        // Crea el objeto reserva y configura los valores
         Reserva reserva = new Reserva();
         reserva.setIdAlojamiento(idAlojamiento);
         reserva.setIdUsuario(idUsuario);
@@ -78,13 +76,12 @@ public class ReservaServlet extends HttpServlet {
         reserva.setFechaFin(fechaFin);
         reserva.setTotal(total);
 
-        // Usa DAOReserva para guardar la reserva en la base de datos
         DAORESERVA daoReserva = new DAORESERVA();
         boolean reservaExitosa = daoReserva.agregarReserva(reserva);
 
         if (reservaExitosa) {
             request.setAttribute("mensaje", "Reserva realizada con éxito");
-            request.getRequestDispatcher("/Cliente/cliente.jsp").forward(request, response);
+            request.getRequestDispatcher("ReservaExitosa.jsp").forward(request, response);
         } else {
             request.setAttribute("errorMessage", "No se pudo realizar la reserva");
             request.getRequestDispatcher("error.jsp").forward(request, response);

@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Reserva {
     private int idReserva;
-    private int idAlojamiento; // ID del alojamiento
-    private int idUsuario; // ID del usuario que realiza la reserva
-    private Date fechaInicio; // Fecha de inicio de la reserva
-    private Date fechaFin; // Fecha de fin de la reserva
+    private int idAlojamiento;
+    private int idUsuario;
+    private Date fechaInicio;
+    private Date fechaFin;
     private double total;
 
     public double getTotal() {

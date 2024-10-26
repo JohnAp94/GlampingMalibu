@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Exitoso</title>
+    <title>Reserva Exitosa</title>
     <link rel="icon" href="Images/iconosRedes/camping_holiday_excursion_camp_tent_icon_258744.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
     <script>
         setTimeout(function() {
-            window.location.href = "login.jsp";
+            window.location.href = "AlojamientoServlet?accion=listar";
         }, 5000); // Redirigir después de 5 segundos
     </script>
 </head>
@@ -44,7 +44,6 @@
                 <nav class="nav-buttons" id="nav">
                     <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
                     <ul class="nav-list">
-                        <li><a href="login.jsp" class="btn">Iniciar Sesión</a></li>
                         <li><a href="quienes-somos.jsp" class="btn">Quiénes Somos</a></li>
                         <li><a href="#galeria" class="btn" id="galeria-btn">Galería</a></li>
                     </ul>
@@ -54,19 +53,20 @@
     </section>
     <section class="description-section">
         <div class="hero-description">
-            <h2 class="subtittle">¡Registro Exitoso!</h2>
+            <h2 class="subtittle">¡Reserva Exitosa!</h2>
         </div>
     </section>
     <section class="gallery-section">
         <div>
             <div class="row">
                 <div id="contenedor1">
-                    <h1>Registro Exitoso</h1>
+                    <h1>Reserva Exitosa</h1>
                 </div>
                 <div id="contenedor2">
                     <div id="referencias">
-                        <p>Gracias por registrarte.</p>
-                        <p>Serás redirigido a Iniciar Sesión en unos segundos.</p>
+                        <p>Gracias por reservar tu alojamiento.</p>
+                        <p>Te esperamos.</p>
+                        <p>Serás redirigido a tu Sesión en unos segundos.</p>
                     </div>
                 </div>
             </div>
