@@ -4,7 +4,7 @@
    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
    response.setDateHeader("Expires", 0); // Proxies.
-
+   
    if (session == null || session.getAttribute("usuario") == null) {
       response.sendRedirect(request.getContextPath() + "/login.jsp");
       return;
@@ -62,8 +62,45 @@
             <p>email: ${usuario.email}</p>
         </div>
         <div>
-            <a href="registerAdmin.jsp" class="btn">Registrar nuevo administrador</a>
             <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=listar" class="btn">Ver Usuarios Registrados</a>
+        </div>
+    </section>
+    <section class="gallery-section">
+        <div>
+            <div class="row">
+                <div id="contenedor1">
+                    <h1>Crear administrador</h1>
+                    <form id="form1" action="RegisterServlet?accion=registrarAdmin" method="POST">
+                        <input type="text" name="username" id="username" value="" placeholder="Usuario" required/>
+                        <hr>
+                        <input type="text" name="name" id="name" value="" placeholder="Nombres" required/>
+                        <hr>
+                        <input type="text" name="lastname" id="lastname" value="" placeholder="Apellidos" required/>
+                        <hr>
+                        <input type="number" name="cedula" id="cedula" min="0" placeholder="Cédula" required/>
+                        <hr>
+                        <input type="email" name="email" id="email" placeholder="email" required/>
+                        <hr>
+                        <input type="password" name="password" id="password" value="" placeholder="Contraseña" required>
+                        <hr>
+                        <select name="genero" id="genero">
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                        </select>
+                        <hr>
+                        <input type="submit" name="registrarse" value="Registrarse" class="btn"/>
+                        <p>${msje}</p>
+                    </form>
+                </div>
+                <div id="contenedor2">
+                    <div id="referencias">
+                        <p>¿Ya tienes cuenta?</p>
+                    </div>
+                    <form id="form2">
+                        <a href="login.jsp" class="btn"/>Ingresar</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <section class="social-section">

@@ -377,3 +377,19 @@ nav {
     border: none;
     text-align: center;
 }
+#tituloListaUsuarios{
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+.containerListaUsuarios{
+    margin: 0 auto;
+    width: 85%;
+}
+
+.alojamientos-disp img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}

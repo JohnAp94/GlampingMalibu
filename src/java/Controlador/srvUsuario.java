@@ -4,7 +4,6 @@ package Controlador;
 import Modelo.DAOUSUARIO;
 import Modelo.usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -93,7 +92,7 @@ public class srvUsuario extends HttpServlet {
             if (usuario.getCargo().getNombreCargo().equals("ADMINISTRADOR")) {
                 request.getServletContext().getRequestDispatcher("/Admin/admin.jsp").forward(request, response);
             } else if (usuario.getCargo().getNombreCargo().equals("CLIENTE")) {
-                request.getServletContext().getRequestDispatcher("/Cliente/cliente.jsp").forward(request, response);
+                response.sendRedirect("AlojamientoServlet?accion=listar");
             }
         } else {
             request.setAttribute("msje", "Usuario o contraseña incorrecto");
@@ -102,8 +101,13 @@ public class srvUsuario extends HttpServlet {
     }
 
     private void cerrarsession(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
+        if(session != null){
         session.invalidate();
+        }
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+        response.setDateHeader("Expires", 0); // Proxies
         response.sendRedirect(request.getContextPath()+"/login.jsp");
     }
 

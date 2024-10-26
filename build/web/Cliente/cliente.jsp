@@ -5,6 +5,7 @@
    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
    response.setDateHeader("Expires", 0); // Proxies.
 
+
    if (session == null || session.getAttribute("usuario") == null) {
       response.sendRedirect(request.getContextPath() + "/login.jsp");
       return;
@@ -64,6 +65,32 @@
     </section>
     <section class="gallery-section">
         <div>
+            <h2 class="center-align">Alojamientos Disponibles</h2>
+            <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Capacidad</th>
+                        <th>Precio por Noche</th>
+                    </tr>
+                </thead>
+                <tbody class="alojamientos-disp">
+                    <c:forEach var="alojamiento" items="${listaAlojamientos}">
+                        <tr>
+                            <td><img src="${alojamiento.rutaFoto}" alt="Imagen de ${alojamiento.nombre}" width="300"/></td>
+                            <td>${alojamiento.nombre}</td>
+                            <td width="300">${alojamiento.descripcion}</td>
+                            <td>${alojamiento.capacidad}</td>
+                            <td>${alojamiento.precio}</td>
+                            <td><a class="btn">Reservar</a></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+        <div>
             <div class="row">
                 <div class="">
                     <h2 class="gallery-tittle" id="galeria">¡Vive tu mejor experiencia!</h2>
@@ -114,6 +141,12 @@
         </div>
     </section>
     <section class="social-section">
+        <h2>Síguenos en Redes Sociales</h2>
+        <div class="social-links">
+            <a href="https://wa.me/573207777663" target="_blank" class="redes"><img src="Images/iconosRedes/whatsapp.png" alt=""></a>
+            <a href="https://www.instagram.com/explore/locations/107262155433881/glamping-malibu/" target="_blank" class="redes"><img src="Images/iconosRedes/instagram.png" alt=""></a>
+            <a href="https://www.facebook.com/glampingmalibu/" target="_blank" class="redes"><img src="Images/iconosRedes/facebook.png" alt=""></a>
+        </div>
         <div class="pie-de-pagina">
             <p>Diseñado por John Aparicio, Fabio González y Duchley Hoyos.</p>
             <p>Para Servicio Nacional de Aprendizaje SENA</p>

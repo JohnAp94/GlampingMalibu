@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Glamping</title>
+    <title>Lista de Usuarios</title>
     <link rel="icon" href="Images/iconosRedes/camping_holiday_excursion_camp_tent_icon_258744.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -61,9 +61,44 @@
             <p>cedula: ${usuario.cedula}</p>
             <p>email: ${usuario.email}</p>
         </div>
-        <div>
-            <a href="registerAdmin.jsp" class="btn">Registrar nuevo administrador</a>
-            <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=listar" class="btn">Ver Usuarios Registrados</a>
+        <a href="registerAdmin.jsp" class="btn"/>Registrarse nuevo administrador</a>
+    </section>
+    <section class="gallery-section">
+        <div class="containerListaUsuarios">
+            <h1 id="tituloListaUsuarios">Lista de Usuarios Registrados</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Cargo</th>
+                        <th>ID</th>
+                        <th>Nombre de Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cédula</th>
+                        <th>Género</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="usuario" items="${listaUsuarios}">
+                        <tr>
+                            <td>${usuario.cargo.nombreCargo}</td>
+                            <td>${usuario.id_usuario}</td>
+                            <td>${usuario.nombreUsuario}</td>
+                            <td>${usuario.nombre}</td>
+                            <td>${usuario.apellido}</td>
+                            <td>${usuario.cedula}</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${usuario.genero == 1}">Hombre</c:when>
+                                    <c:otherwise>Mujer</c:otherwise>
+                                </c:choose>
+                            </td>
+                            <td>${usuario.email}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
     </section>
     <section class="social-section">

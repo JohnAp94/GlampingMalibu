@@ -61,6 +61,10 @@
             <p>cedula: ${usuario.cedula}</p>
             <p>email: ${usuario.email}</p>
         </div>
+        <div>
+            <a href="registerAdmin.jsp" class="btn">Registrar nuevo administrador</a>
+            <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=listar" class="btn">Ver Usuarios Registrados</a>
+        </div>
     </section>
     <section class="social-section">
         <div class="pie-de-pagina">

@@ -7,7 +7,7 @@ public class usuario {
     private String nombreUsuario;
     private String clave;
     private cargo cargo;
-    private int cedula;
+    private long cedula;
     private String nombre;
     private String apellido;
     private int genero;
@@ -45,11 +45,11 @@ public class usuario {
         this.cargo = cargo;
     }
 
-    public int getCedula() {
+    public long getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(long cedula) {
         this.cedula = cedula;
     }
 

@@ -18,12 +18,12 @@ const galeria = document.querySelector("#galeria-btn");
 
 abrir.addEventListener("click", () => {
     nav.classList.add("visible");
-})
+});
 
 cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
-})
+});
 
 galeria.addEventListener("click", () => {
     nav.classList.remove("visible");
-})
+});

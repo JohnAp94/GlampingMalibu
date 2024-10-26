@@ -8,6 +8,14 @@
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>Controlador.RegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <servlet-class>Controlador.UsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlojamientoServlet</servlet-name>
+        <servlet-class>Controlador.AlojamientoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <url-pattern>/UsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlojamientoServlet</servlet-name>
+        <url-pattern>/AlojamientoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
