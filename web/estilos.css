@@ -404,6 +404,8 @@ nav {
 }
 
 #div_Reserva img {
+    min-height: 200px;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -423,4 +425,9 @@ nav {
 
 #Selec_Fechas div{
     padding: 0 10px;
+}
+
+#titleAlojDisp {
+    margin: 0;
+    padding: 20px
 }

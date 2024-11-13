@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <% 
    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
@@ -65,7 +66,7 @@
     </section>
     <section class="gallery-section">
         <div>
-            <h2 class="center-align">Alojamientos Disponibles</h2>
+            <h2 class="center-align" id="titleAlojDisp">Alojamientos Disponibles</h2>
             <table class="highlight centered">
                 <thead>
                     <tr>
@@ -83,7 +84,7 @@
                             <td>${alojamiento.nombre}</td>
                             <td width="300">${alojamiento.descripcion}</td>
                             <td>${alojamiento.capacidad}</td>
-                            <td>${alojamiento.precio}</td>
+                            <td>$<fmt:formatNumber value="${alojamiento.precio}" type="number" maxFractionDigits="0"/></td>
                             <td><a href="ReservaServlet?accion=reservar&idAlojamiento=${alojamiento.idAlojamiento}" class="btn">Reservar</a></td>
                         </tr>
                     </c:forEach>

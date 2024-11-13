@@ -23,7 +23,7 @@
     <script>
         setTimeout(function() {
             window.location.href = "AlojamientoServlet?accion=listar";
-        }, 5000); // Redirigir después de 5 segundos
+        }, 10000); // Redirigir después de 10 segundos
     </script>
 </head>
 <body>
