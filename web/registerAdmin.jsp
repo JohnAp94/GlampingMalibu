@@ -92,14 +92,6 @@
                         <p>${msje}</p>
                     </form>
                 </div>
-                <div id="contenedor2">
-                    <div id="referencias">
-                        <p>¿Ya tienes cuenta?</p>
-                    </div>
-                    <form id="form2">
-                        <a href="login.jsp" class="btn"/>Ingresar</a>
-                    </form>
-                </div>
             </div>
         </div>
     </section>

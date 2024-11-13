@@ -393,3 +393,34 @@ nav {
     object-fit: cover;
     border-radius: 15px;
 }
+
+#div_Reserva {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#div_Reserva img {
+    border-radius: 20px;
+}
+
+#formulario_Reserva {
+    padding: 20px;
+    text-align: center;
+}
+
+#Selec_Fechas {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-evenly;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+#Selec_Fechas div{
+    padding: 0 10px;
+}

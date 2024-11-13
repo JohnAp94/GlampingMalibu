@@ -85,25 +85,35 @@
         </div>
     </section>
     <section class="gallery-section">
-        <h1><%= alojamiento.getNombre() %></h1>
-        <p><%= alojamiento.getDescripcion() %></p>
-        <p>Precio por noche: <%= alojamiento.getPrecio() %></p>
-        <img src="<%= alojamiento.getRutaFoto() %>" alt="<%= alojamiento.getNombre() %>" width="300">
-
-        <h3>Formulario de Reserva</h3>
-        <form action="ReservaServlet?accion=agregar" method="post">
-            <input type="hidden" name="idAlojamiento" value="<%= alojamiento.getIdAlojamiento() %>">
-            <input type="hidden" name="idUsuario" value="<%= ((usuario)session.getAttribute("usuario")).getId_usuario() %>">
-            <input type="hidden" name="precioPorNoche" value="<%= alojamiento.getPrecio() %>">
-            
-            <label for="fechaInicio">Fecha de Inicio:</label>
-            <input type="date" name="fechaInicio" required>
-
-            <label for="fechaFin">Fecha de Fin:</label>
-            <input type="date" name="fechaFin" required>
-
-            <button type="submit">Reservar</button>
-        </form>
+        <div id="div_Reserva">
+            <div>
+                <h1><%= alojamiento.getNombre() %></h1>
+                <p><%= alojamiento.getDescripcion() %></p>
+                <p>Precio por noche: <%= alojamiento.getPrecio() %></p>
+            </div>
+            <div>
+                <img src="<%= alojamiento.getRutaFoto() %>" alt="<%= alojamiento.getNombre() %>" width="300">
+            </div>
+        </div>
+        <div id="formulario_Reserva">
+            <h3>Formulario de Reserva</h3>
+            <form action="ReservaServlet?accion=agregar" method="post">
+                <input type="hidden" name="idAlojamiento" value="<%= alojamiento.getIdAlojamiento() %>">
+                <input type="hidden" name="idUsuario" value="<%= ((usuario)session.getAttribute("usuario")).getId_usuario() %>">
+                <input type="hidden" name="precioPorNoche" value="<%= alojamiento.getPrecio() %>">
+                <div id="Selec_Fechas">
+                    <div>
+                        <label for="fechaInicio">Fecha de Inicio:</label>
+                        <input type="date" name="fechaInicio" required>
+                    </div>
+                    <div>
+                        <label for="fechaFin">Fecha de Fin:</label>
+                        <input type="date" name="fechaFin" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Reservar</button>
+            </form>
+        </div>
     </section>
 </body>
 </html>
