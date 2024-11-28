@@ -20,6 +20,14 @@
         <servlet-name>ReservaServlet</servlet-name>
         <servlet-class>Controlador.ReservaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReservacionesServlet</servlet-name>
+        <servlet-class>Controlador.ReservacionesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservacionesServlet</servlet-name>
+        <url-pattern>/ReservacionesServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>

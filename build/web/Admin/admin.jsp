@@ -64,7 +64,7 @@
         <div>
             <a href="registerAdmin.jsp" class="btn">Registrar nuevo administrador</a>
             <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=listar" class="btn">Ver Usuarios Registrados</a>
-            <a href="" class="btn">Ver reservaciones</a>
+            <a href="${pageContext.request.contextPath}/ReservacionesServlet?accion=listar" class="btn">Ver reservaciones</a>
         </div>
     </section>
     <section class="social-section">

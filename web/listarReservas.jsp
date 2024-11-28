@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <% 
    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
@@ -8,7 +9,7 @@
    if (session == null || session.getAttribute("usuario") == null) {
       response.sendRedirect(request.getContextPath() + "/login.jsp");
       return;
-   }else{
+   } else {
 %>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
+    <title>Lista de Reservaciones</title>
     <link rel="icon" href="Images/iconosRedes/camping_holiday_excursion_camp_tent_icon_258744.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -55,49 +56,40 @@
     </section>
     <section class="description-section">
         <div class="hero-description">
-            <h3 class="subtittle">Usted es ${usuario.cargo.nombreCargo}</h3>
+            <h3 class="subtittle">Reservaciones</h3>
             <p>Nombre: ${usuario.nombre}</p>
             <p>Apellido: ${usuario.apellido}</p>
-            <p>cedula: ${usuario.cedula}</p>
-            <p>email: ${usuario.email}</p>
+            <p>Cédula: ${usuario.cedula}</p>
+            <p>Email: ${usuario.email}</p>
         </div>
         <div>
             <a href="registerAdmin.jsp" class="btn">Registrar nuevo administrador</a>
-            <a href="${pageContext.request.contextPath}/ReservacionesServlet?accion=listar" class="btn">Ver reservaciones</a>
+            <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=listar" class="btn">Ver Usuarios Registrados</a>
         </div>
     </section>
     <section class="gallery-section">
         <div class="containerListaUsuarios">
-            <h1 id="tituloListaUsuarios">Lista de Usuarios Registrados</h1>
+            <h1 id="tituloListaUsuarios">Lista de Reservaciones</h1>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Cargo</th>
-                        <th>ID</th>
-                        <th>Nombre de Usuario</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Cédula</th>
-                        <th>Género</th>
-                        <th>Email</th>
+                        <th>ID Reservación</th>
+                        <th>Alojamiento</th>
+                        <th>Usuario</th>
+                        <th>Fecha Ingreso</th>
+                        <th>Fecha Salida</th>
+                        <th>Valor Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="usuario" items="${listaUsuarios}">
+                    <c:forEach var="reserva" items="${listaReservas}">
                         <tr>
-                            <td>${usuario.cargo.nombreCargo}</td>
-                            <td>${usuario.id_usuario}</td>
-                            <td>${usuario.nombreUsuario}</td>
-                            <td>${usuario.nombre}</td>
-                            <td>${usuario.apellido}</td>
-                            <td>${usuario.cedula}</td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${usuario.genero == 1}">Hombre</c:when>
-                                    <c:otherwise>Mujer</c:otherwise>
-                                </c:choose>
-                            </td>
-                            <td>${usuario.email}</td>
+                            <td>${reserva.idReserva}</td>
+                            <td>${reserva.nombreAlojamiento}</td>
+                            <td>${reserva.nombreUsuario}</td>
+                            <td>${reserva.fechaInicio}</td>
+                            <td>${reserva.fechaFin}</td>
+                            <td>$<fmt:formatNumber value="${reserva.total}" type="number" maxFractionDigits="0"/></td>
                         </tr>
                     </c:forEach>
                 </tbody>

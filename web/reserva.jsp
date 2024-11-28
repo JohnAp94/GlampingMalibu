@@ -98,16 +98,29 @@
         <div id="formulario_Reserva">
             <h3>Formulario de Reserva</h3>
             <form action="ReservaServlet?accion=agregar" method="post">
+                <input type="text" name="nombreCompleto" id="nombre" value="" placeholder="Nombre completo" required/>
+                <input type="number" name="ced" id="ced" min="0" placeholder="Cédula" required/>
+                <input type="email" name="email" id="mail" placeholder="Correo" required/>
+                <input type="number" name="cantidadHuespedes" min="0" placeholder="Cantidad de huespedes" required>
+                <div class="formResInput">
+                    <h5>Seleccione medio de pago:</h5>
+                    <input type="radio" id="PSE" name="fav_language" value="PSE">
+                    <label for="PSE">PSE</label><br>
+                    <input type="radio" id="Tarjeta" name="fav_language" value="Tarjeta">
+                    <label for="Tarjeta">Tarjeta de Crédito/Débito</label><br>
+                    <input type="radio" id="PayPal" name="fav_language" value="PayPal">
+                    <label for="PayPal">PayPal</label>
+                </div>
                 <input type="hidden" name="idAlojamiento" value="<%= alojamiento.getIdAlojamiento() %>">
                 <input type="hidden" name="idUsuario" value="<%= ((usuario)session.getAttribute("usuario")).getId_usuario() %>">
                 <input type="hidden" name="precioPorNoche" value="<%= alojamiento.getPrecio() %>">
                 <div id="Selec_Fechas">
                     <div>
-                        <label for="fechaInicio">Fecha de Inicio:</label>
+                        <label for="fechaInicio">Fecha de ingreso:</label>
                         <input type="date" name="fechaInicio" required>
                     </div>
                     <div>
-                        <label for="fechaFin">Fecha de Fin:</label>
+                        <label for="fechaFin">Fecha de salida:</label>
                         <input type="date" name="fechaFin" required>
                     </div>
                 </div>

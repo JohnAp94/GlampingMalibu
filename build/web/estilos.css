@@ -414,6 +414,27 @@ nav {
     text-align: center;
 }
 
+#formulario_Reserva form{
+    max-width: 450px;
+    margin: auto;
+}
+
+#formulario_Reserva input[type="radio"] {
+    position: unset;
+    opacity: 100%;
+    pointer-events: auto;
+}
+
+.formResInput {
+    width: max-content;
+    text-align: left;
+    margin: auto;
+}
+
+#formulario_Reserva label {
+    font-size: 1rem;
+}
+
 #Selec_Fechas {
     display: flex;
     width: 50%;

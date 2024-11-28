@@ -10,13 +10,9 @@ public class Reserva {
     private Date fechaFin;
     private double total;
 
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
+    // Atributos adicionales para mostrar detalles
+    private String nombreAlojamiento;
+    private String nombreUsuario;
 
     // Getters y Setters
     public int getIdReserva() {
@@ -57,5 +53,30 @@ public class Reserva {
 
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    // Métodos adicionales para los atributos extra
+    public String getNombreAlojamiento() {
+        return nombreAlojamiento;
+    }
+
+    public void setNombreAlojamiento(String nombreAlojamiento) {
+        this.nombreAlojamiento = nombreAlojamiento;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 }
